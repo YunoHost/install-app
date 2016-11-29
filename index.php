@@ -97,19 +97,6 @@ if(isset($_POST['server']) AND !empty($_POST['server'])) {
 		width: 100%;
 		padding: 0.8em 0.8em 0.8em 3em;
 	}
-	
-	.messages {
-	  color: #FFF;
-	  margin-bottom: 1em;
-	  text-align: center;
-	  max-width: 21em;
-	  margin: 2% auto 1em auto;
-	  padding: 1.5em;
-	}
-	.messages.danger { background: #c0392b; }
-	.messages.warning { background: #e67e22; }
-	.messages.success { background: #27ae60; }
-	.messages.info { background: #2980b9; }
 	</style>
 </head>
 <body>
@@ -117,7 +104,6 @@ if(isset($_POST['server']) AND !empty($_POST['server'])) {
 		<img src="logo-ynh-white.svg"/>
 	</h1>
 	<div class="overlay">
-		<!--<div class="wrapper messages info">Please enter the address of your YunoHost server</div>-->
 		<div class="wrapper">
 			<form class="form" name="input" action="" method="post">
 				<input id="server" type="text" name="server" placeholder="Link to your YunoHost server" autofocus required>
