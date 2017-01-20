@@ -84,10 +84,10 @@ if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'offi
 </head>
 <body>
 	<h1 id="logo" class="logo">
-		<img src="logo-ynh-white.svg"/>
+      <img src="assets/img/logo-ynh-white.svg"/><span class="element-invisible">Yunohost</span>
 	</h1>
 
-<div class="overlay">	
+<div class="overlay">
 
 	<div class="ynh-wrapper login">	
 
@@ -152,7 +152,13 @@ else {
 }
 ?>
 
+	<div class="wrapper messages success">
+		<h3><?php echo $locale['noserver']; ?></h3>
+		<p><?php echo $locale['yunohost']; ?></p>
+		<p><a href="https://yunohost.org/#/" title="<?php echo $locale['discover']; ?>" class="btn link-btn"><?php echo $locale['discover']; ?></a></p>
 	</div>
+
+</div>
 
   <!-- Scripts -->
   <script src="assets/js/global.js"></script>
