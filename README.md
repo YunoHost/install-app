@@ -7,14 +7,18 @@ As YunoHost is not a centralized service, such a badge cannot link directly to u
 
 # Embed the "Install with YunoHost" button
 
-Example for the Roundcube app
+Example for the Roundcube app (official app)
 
 *HTML*
 
-`<a href="http://www.scith.ovh/installynh/?app=roundcube"><img src="http://www.scith.ovh/installynh/install-with-yunohost.png" alt="Install Roundcube with YunoHost" /></a>`
+`<a href="https://install-app.yunohost.org/?app=roundcube"><img src="https://install-app.yunohost.org/install-with-yunohost.png" alt="Install Roundcube with YunoHost" /></a>`
 
 *Markdown*
 
-`[![Install Roundcube with YunoHost](http://www.scith.ovh/installynh/install-with-yunohost.png)](http://www.scith.ovh/installynh/?app=roundcube)`
+`[![Install Roundcube with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=roundcube)`
 
-[![Install Roundcube with YunoHost](http://www.scith.ovh/installynh/install-with-yunohost.png)](http://www.scith.ovh/installynh/?app=roundcube)
+[![Install Roundcube with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=roundcube)
+
+Example for the Duniter app (community)
+
+[![Install Duniter with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=duniter)
