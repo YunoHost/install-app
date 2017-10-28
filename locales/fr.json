@@ -7,8 +7,8 @@
    "community_redirect": "Accéder au serveur",
    "app_notfound": "Cette application n'est maintenue ni officiellemment, ni par la communauté.",
    "working": "fonctionnel",
-   "inprogress": "non fonctionnel",
-   "notworking": "en cours de développement",
+   "inprogress": "en cours de développement",
+   "notworking": "non fonctionnel",
    "noserver": "Pas encore de serveur YunoHost ?",
    "yunohost": "YunoHost est un outil qui vous permet d’installer et d’utiliser facilement votre propre serveur.",
    "discover": "Découvrez YunoHost"
