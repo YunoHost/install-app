@@ -115,7 +115,7 @@ else if($app_status == 'community') {
 		// If the user submitted his or her server and the app is community, redirects to the server
 		if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'community') {
 			$server = rtrim(preg_replace('#^https?://#', '', $_POST['server']),"/");
-			$url = 'https://'.$server.'/yunohost/admin/#/apps/install/apps';
+			$url = 'https://'.$server.'/yunohost/admin/#/apps/install';
 		?>
 		<form class="login-form" name="input" action="<?php echo $url; ?>" method="get">
 			<p style="text-align:center;color:white;"><?php echo $locale['community_instructions']; ?></p>
