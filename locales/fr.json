@@ -8,5 +8,6 @@
    "notworking": "non fonctionnel",
    "noserver": "Pas encore de serveur YunoHost ?",
    "yunohost": "YunoHost est un outil qui vous permet d’installer et d’utiliser facilement votre propre serveur.",
-   "discover": "Découvrez YunoHost"
+   "discover": "Cliquez ici pour découvrir YunoHost",
+   "app_state_warning": "<strong>ATTENTION</strong>: Cette application est pour le moment de mauvaise qualité. L'installation va peut-être fonctionner, mais certaines fonctionnalités importantes telles que la sauvegarde/restauration peuvent être manquante, et/ou l'application ne respecte pas les bonnes pratiques ce qui peut créer des problèmes sur votre serveur. Soyez prudent."
 }

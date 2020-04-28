@@ -9,28 +9,34 @@ if (!file_exists("locales/".$user_locale.".json")) { $user_locale = 'en'; }
 $locale=json_decode(file_get_contents("locales/".$user_locale.".json"), true);
 
 // Parse the apps list
-$apps_list_json=file_get_contents("https://app.yunohost.org/apps.json");
+$apps_list_json=file_get_contents("http://app.yunohost.org/apps.json");
 $apps_list=json_decode($apps_list_json, true);
 
 // Check if the app is the apps list
 if(array_key_exists($app, $apps_list)) {
-	// The app is in the apps list
-	$app_status = 'apps_list';							// The app is in the apps list
-	$app_name = $apps_list[$app]['manifest']['name'];	// Saves the app name
-	$app_git = $apps_list[$app]['git']['url'];			// Saves the git URL
-	$app_state = $apps_list[$app]['state'];				// Saves the app state
+    // The app is in the apps list
+    $app_status = $apps_list[$app]['state'];             // Saves the app state
+    $app_name = $apps_list[$app]['manifest']['name'];    // Saves the app name
+    $app_git = $apps_list[$app]['git']['url'];           // Saves the git URL
+    if (array_key_exists("level", $apps_list[$app])) {
+        $app_level = $apps_list[$app]['level'];
+    }
+    else {
+        $app_level = 0;
+        $app_status = null;
+    }
 }
 else {
-	// The app is not in the apps list
-	$app_status = null;
-	$app_name = "";
+    // The app is not in the apps list
+    $app_status = null;
+    $app_name = "";
 }
 
 // If the user submitted his or her server and the app is in apps ist, redirects to the server
-if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'apps_list') {
-	$server = rtrim(preg_replace('#^https?://#', '', $_POST['server']),"/");
-	$url = 'https://'.$server.'/yunohost/admin/#/apps/install/'.$app;
-	header('Location: '.$url);
+if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'working') {
+    $server = rtrim(preg_replace('#^https?://#', '', $_POST['server']),"/");
+    $url = 'https://'.$server.'/yunohost/admin/#/apps/install/'.$app;
+    header('Location: '.$url);
 }
 
 ?>
@@ -48,7 +54,7 @@ if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'apps
   <meta name="robots" content="noindex, nofollow">
 
   <!-- Stylesheets -->
-	<link rel="stylesheet" href="assets/css/ynh-style.css">
+    <link rel="stylesheet" href="assets/css/ynh-style.css">
 
   <!-- Icons -->
   <link rel="shortcut icon" href="assets/icons/favicon.ico">
@@ -69,42 +75,49 @@ if(isset($_POST['server']) AND !empty($_POST['server']) AND $app_status == 'apps
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 </head>
 <body>
-	<h1 id="logo" class="logo">
+    <h1 id="logo" class="logo">
       <img src="assets/img/logo-ynh-white.svg"/><span class="element-invisible">Yunohost</span>
-	</h1>
+    </h1>
 
 <div class="overlay">
 
-	<div class="ynh-wrapper login">	
+    <div class="ynh-wrapper login">
 
-<?php 
+<?php
 // The app is in apps list, display an install form
-if($app_status == 'apps_list') { 
+if($app_status == 'working') {
+        if($app_level <= 4) {
 ?>
-		<form class="login-form" name="input" action="" method="post">
-  			<div class="form-group">
-    			<label class="icon icon-connexion" for="server"><span class="element-invisible"><?php echo $locale['server_link']; ?></span></label>
-    			<input id="server" type="text" name="server" placeholder="<?php echo $locale['server_link']; ?>" class="form-text" autofocus required>
-  			</div>
-  			<input type="submit" value="<?php echo str_replace("{app_name}", $app_name, $locale['install_button']); ?>" class="btn classic-btn large-btn">
-		</form>
+        <div class="wrapper messages warning">
+            <p><?php echo $locale['app_state_warning']; ?></p>
+        </div>
+<?php
+       }
+?>
+        <form class="login-form" name="input" action="" method="post">
+              <div class="form-group">
+                <label class="icon icon-connexion" for="server"><span class="element-invisible"><?php echo $locale['server_link']; ?></span></label>
+                <input id="server" type="text" name="server" placeholder="<?php echo $locale['server_link']; ?>" class="form-text" autofocus required>
+              </div>
+              <input type="submit" value="<?php echo str_replace("{app_name}", $app_name, $locale['install_button']); ?>" class="btn classic-btn large-btn">
+        </form>
 <?php
 }
 // The app is not in the apps list
 else {
 ?>
-	<div class="wrapper messages danger">
-		<p><?php echo $locale['app_notfound']; ?></p>
-	</div>
-<?php 
+    <div class="wrapper messages danger">
+        <p><?php echo $locale['app_notfound']; ?></p>
+    </div>
+<?php
 }
 ?>
 
-	<div class="wrapper messages success">
-		<h3><?php echo $locale['noserver']; ?></h3>
-		<p><?php echo $locale['yunohost']; ?></p>
-		<p><a href="https://yunohost.org/#/" title="<?php echo $locale['discover']; ?>" class="btn link-btn"><?php echo $locale['discover']; ?></a></p>
-	</div>
+    <div class="wrapper messages success">
+        <h3><?php echo $locale['noserver']; ?></h3>
+        <p><?php echo $locale['yunohost']; ?></p>
+        <p><a href="https://yunohost.org/#/" title="<?php echo $locale['discover']; ?>" class="btn link-btn"><?php echo $locale['discover']; ?></a></p>
+    </div>
 
 </div>
 
