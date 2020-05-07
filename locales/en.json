@@ -2,14 +2,12 @@
    "title": "Install {app_name} with YunoHost",
    "server_link": "Link to your YunoHost server",
    "install_button": "Install {app_name}",
-   "community_warning": "<strong>WARNING</strong>: {app_name} is <strong>NOT officially supported</strong> by the YunoHost team yet. Install it <strong>at your own risk</strong>. The community maintainer has described this app to be in a {app_state} state.",
-   "community_instructions": "Copy the following link. You will then be redirected to your server apps installation page in which you will need to paste this link.",
-   "community_redirect": "Go to your server",
    "app_notfound": "This application is neither officially nor community maintained.",
    "working": "working",
    "inprogress": "in progress",
    "notworking": "not working",
    "noserver": "No YunoHost server yet?",
    "yunohost": "YunoHost is a server operating system aiming to make self-hosting accessible to everyone.",
-   "discover": "Discover YunoHost"
+   "discover": "Click here to discover YunoHost",
+   "app_state_warning": "<strong>WARNING</strong>: This app is bad-quality for now. Installation could maybe work, but it may lack important features like backup/restore, and/or it uses deprecated practices that may cause issues on your server. Please be careful."
 }

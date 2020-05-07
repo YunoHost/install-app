@@ -114,11 +114,13 @@ img {
 /* Layout */
 .overlay {
   padding: 2%;
+  padding-top: 0;
 }
 
 .ynh-wrapper {
   width: 90%;
   margin: 2% 5%;
+  margin-top: 20px;
   position: relative;
   z-index: 1;
 }

@@ -2,14 +2,12 @@
    "title": "Installer {app_name} avec YunoHost",
    "server_link": "Lien vers votre serveur YunoHost",
    "install_button": "Installer {app_name}",
-   "community_warning": "<strong>ATTENTION</strong> : {app_name} <strong>N'EST PAS officiellement prise en charge</strong> pour le moment par l'équipe YunoHost. Installez cette application <strong>à vos risques et périls</strong>. Le mainteneur de cette application la décrit comme étant dans un état {app_state}.",
-   "community_instructions": "Merci de copier le lien suivant. Vous serez ensuite redirigé vers la page d'installation d'applications de votre serveur dans laquelle vous devrez coller ce lien.",
-   "community_redirect": "Accéder au serveur",
    "app_notfound": "Cette application n'est maintenue ni officiellemment, ni par la communauté.",
    "working": "fonctionnel",
    "inprogress": "en cours de développement",
    "notworking": "non fonctionnel",
    "noserver": "Pas encore de serveur YunoHost ?",
    "yunohost": "YunoHost est un outil qui vous permet d’installer et d’utiliser facilement votre propre serveur.",
-   "discover": "Découvrez YunoHost"
+   "discover": "Cliquez ici pour découvrir YunoHost",
+   "app_state_warning": "<strong>ATTENTION</strong>: Cette application est pour le moment de mauvaise qualité. L'installation va peut-être fonctionner, mais certaines fonctionnalités importantes telles que la sauvegarde/restauration peuvent être manquante, et/ou l'application ne respecte pas les bonnes pratiques ce qui peut créer des problèmes sur votre serveur. Soyez prudent."
 }
