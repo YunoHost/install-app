@@ -2,7 +2,7 @@
    "title": "Installer {app_name} avec YunoHost",
    "server_link": "Lien vers votre serveur YunoHost",
    "install_button": "Installer {app_name}",
-   "app_notfound": "Cette application n'est maintenue ni officiellemment, ni par la communauté.",
+   "app_notfound": "Cette application n'est pas dans le catalogue d'apps YunoHost.",
    "working": "fonctionnel",
    "inprogress": "en cours de développement",
    "notworking": "non fonctionnel",
