@@ -2,7 +2,7 @@
    "title": "Install {app_name} with YunoHost",
    "server_link": "Link to your YunoHost server",
    "install_button": "Install {app_name}",
-   "app_notfound": "This application is not in Yunohost's app catalog.",
+   "app_notfound": "This application is not in YunoHost's app catalog.",
    "working": "working",
    "inprogress": "in progress",
    "notworking": "not working",
