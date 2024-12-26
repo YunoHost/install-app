@@ -9,7 +9,7 @@ if (!file_exists("locales/".$user_locale.".json")) { $user_locale = 'en'; }
 $locale=json_decode(file_get_contents("locales/".$user_locale.".json"), true);
 
 // Parse the apps list
-$apps_list_json=file_get_contents("http://app.yunohost.org/default/v2/apps.json");
+$apps_list_json=file_get_contents("https://app.yunohost.org/default/v3/apps.json");
 $apps_list=json_decode($apps_list_json, true)["apps"];
 
 // Check if the app is the apps list
