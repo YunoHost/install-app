@@ -97,7 +97,7 @@ if($app_status == 'working') {
         <form class="login-form" name="input" action="" method="post">
               <div class="form-group">
                 <label class="icon icon-connexion" for="server"><span class="element-invisible"><?php echo $locale['server_link']; ?></span></label>
-                <input id="server" type="text" name="server" placeholder="<?php echo $locale['server_link']; ?>" class="form-text" autofocus required>
+                <input id="server" type="url" name="server" placeholder="<?php echo $locale['server_link']; ?>" class="form-text" autofocus required>
               </div>
               <input type="submit" value="<?php echo str_replace("{app_name}", $app_name, $locale['install_button']); ?>" class="btn classic-btn large-btn">
         </form>
